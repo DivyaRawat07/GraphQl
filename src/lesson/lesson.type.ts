@@ -1,18 +1,23 @@
-import { Field, ID, ObjectType } from "@nestjs/graphql";
+import { Field, ID, ObjectType } from "@nestjs/graphql"
+import { StudentType } from "src/student/student.type"
 
-@ObjectType('Lesson')
+@ObjectType('Lesson')      //GraphQL playground fields
 export class LessonType{
-    @Field(type => ID)
-    id:string;
-    
-    @Field()
-    name:string;
+
+
+    @Field(type => ID)    // type id of type ID remaining are of type string 
+    id:string
 
     @Field()
-    startDate:string;
+    name:string
 
     @Field()
-    endDate:string;
+    startDate:string
 
-    
+    @Field()
+    endDate:string
+
+    @Field(type=> [StudentType])
+    students:string[]; 
+
 }

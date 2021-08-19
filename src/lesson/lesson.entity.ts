@@ -1,13 +1,14 @@
-import { Entity, Column, PrimaryColumn, ObjectIdColumn} from 'typeorm';
+import { Column, Entity, ObjectIdColumn, PrimaryColumn } from "typeorm";
 
-@Entity()
+@Entity()                 //In mongoDb 
 export class Lesson{
+
     @ObjectIdColumn()
-    _id:string;
-   
-    @PrimaryColumn()
+    _id: string;      // mongodb id starts with _id (optional)
+ 
+    @PrimaryColumn()  //uniqui column
     id:string;
-    
+
     @Column()
     name:string;
 
@@ -15,7 +16,10 @@ export class Lesson{
     startDate:string;
 
     @Column()
-    endDate:string;
+    endDate:string; 
+
+    @Column()
+    students:string[];
 
 
 }
